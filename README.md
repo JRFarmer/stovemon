@@ -14,11 +14,9 @@ Connect the thermocouple amplifier to the Raspberry Pi.
 
 * Install raspbian or raspbian lite. 
     * https://www.raspberrypi.org/documentation/installation/installing-images/
-* Install i2c-tools
-    * sudo apt-get install i2c-tools
-* Install i2c Python library
-    * sudo apt-get install python3-smbus
-* Enable the i2c master
+* Install spidev Python library
+    * sudo apt-get install python3-spidev
+* Enable the spi master
     * sudo raspi-config
     * 5 Interface Options
-    * P5 I2C
+    * P5 SPI
