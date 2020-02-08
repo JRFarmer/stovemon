@@ -20,3 +20,8 @@ Connect the thermocouple amplifier to the Raspberry Pi.
     * sudo raspi-config
     * 5 Interface Options
     * P5 SPI
+* Install the Adafruit IO Python API: https://github.com/adafruit/Adafruit_IO_Python
+    * Might need to do this:
+        * sudo apt-get update
+        * sudo apt-get install python3-pip
+    * pip3 install adafruit-io
