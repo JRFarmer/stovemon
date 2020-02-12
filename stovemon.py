@@ -8,7 +8,7 @@ import Adafruit_IO
 def main(cfgfile):
 
     config = configparser.ConfigParser()
-    config.read(cfgfile)p0
+    config.read(cfgfile)
 
     ADAFRUIT_IO_USERNAME    = config["io.adafruit.com"]["USERNAME"]
     ADAFRUIT_IO_KEY         = config["io.adafruit.com"]["KEY"]
