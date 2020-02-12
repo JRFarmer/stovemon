@@ -6,9 +6,11 @@ Wood stove temperature monitor using RPi, Adafruit IO and thermocouple amplifier
 * Raspberry Pi (whichever version, including Pi Zero models)
 * Adafruit Thermocouple Amplifier MAX31855 breakout board
 * K-type thermocouple
+* Adafruit 0.56" 4-Digit 7-Segment Display w/I2C Backpack
 
 Connect the thermocouple to the thermocouple amplifier.
 Connect the thermocouple amplifier to the Raspberry Pi.
+Connect the 4-digit display to the Raspberry Pi.
 
 ## Configure Raspberry PI
 
@@ -24,4 +26,6 @@ Connect the thermocouple amplifier to the Raspberry Pi.
     * Might need to do this:
         * sudo apt-get update
         * sudo apt-get install python3-pip
-    * pip3 install adafruit-io
+    * sudo pip3 install adafruit-io
+* Install the Adafruit 7-segment LED library: https://github.com/adafruit/Adafruit_CircuitPython_HT16K33
+    * sudo pip3 install adafruit-circuitpython-ht16k33
