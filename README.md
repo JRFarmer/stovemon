@@ -27,5 +27,7 @@ Connect the 4-digit display to the Raspberry Pi.
         * sudo apt-get update
         * sudo apt-get install python3-pip
     * sudo pip3 install adafruit-io
+* Install the Adafruit CircuitPython driver for MAX31855 Thermocouple Amplifier: https://github.com/adafruit/Adafruit_CircuitPython_MAX31855
+    * sudo pip3 install adafruit-circuitpython-max31855
 * Install the Adafruit 7-segment LED library: https://github.com/adafruit/Adafruit_CircuitPython_HT16K33
     * sudo pip3 install adafruit-circuitpython-ht16k33
