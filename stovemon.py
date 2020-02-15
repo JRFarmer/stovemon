@@ -1,7 +1,11 @@
+#!/usr/bin/python3
+
+# standard python libraries
 import sys
 import time
 import configparser
 
+# adafruit libraries
 import board
 from Adafruit_IO import Client
 from adafruit_ht16k33 import segments
