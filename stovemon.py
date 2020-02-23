@@ -4,6 +4,7 @@
 import sys
 import time
 import configparser
+import systemd.daemon
 
 # adafruit libraries
 import board
@@ -56,13 +57,21 @@ def main(cfgfile):
     spi = board.SPI()
     thermo = MAX31855(spi, int(config["spidev"]["DEVICE"]))
 
+    systemd.daemon.notify('READY=1')
+
     count = -1
     while (True):
 
-        count = count + 1
-        time.sleep(1)
-
-        temp, ref = read_retries(thermo, 3)
+        try:
+            temp, ref = read_retries(thermo, 3)
+        except RuntimeError as e:
+            if "not connected" in str(e):
+                display.print("-OC-") # open circuit
+            elif "short" in str(e) and "ground" in str(e):
+                display.print("SH-E") # short to earth
+            elif "short" in str(e) and "power" in str(e):
+                display.print("SH-P") # short to power
+            raise
 
         if (count % DISPLAY_PERIOD == 0):
             # update the display
@@ -76,6 +85,9 @@ def main(cfgfile):
         if (count % CJ_PERIOD == 0):
             # push cold junction temperature
             aio.send_data(cj_feed.key, ref)
+
+        count = count + 1
+        time.sleep(1)
 
 if __name__ == "__main__":
     main(sys.argv[1])

@@ -31,3 +31,5 @@ Connect the 4-digit display to the Raspberry Pi.
     * sudo pip3 install adafruit-circuitpython-max31855
 * Install the Adafruit 7-segment LED library: https://github.com/adafruit/Adafruit_CircuitPython_HT16K33
     * sudo pip3 install adafruit-circuitpython-ht16k33
+* Install the systemd library
+    *  sudo apt-get install python3-systemd
